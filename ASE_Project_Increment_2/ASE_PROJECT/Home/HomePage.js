@@ -10,10 +10,8 @@ myApp.controller("homeController", function($scope) {
     };
     firebase.initializeApp($scope.config);
     $scope.uploadImage = function() {
-<<<<<<< HEAD
         $scope.metadata = {};
             var fileUploader = document.getElementById('fileUploader');
-=======
         $scope.metadata = {
             "Created By": $scope.createdBy,
             "Contact no": $scope.createdPhno,
@@ -22,8 +20,6 @@ myApp.controller("homeController", function($scope) {
             "Diagnosis Cost": $scope.createdCost,
             "Prescription": $scope.createdPrescriptions
         };
-        var fileUploader = document.getElementById('fileImageUploaded');
->>>>>>> e84dd9e2ef4c50ec2a0d85cd6031782346537c91
             var file = fileUploader.files[0];
             var extractimage = document.getElementById("fileImageUploaded");
             var imgfile = extractimage.files[0];
