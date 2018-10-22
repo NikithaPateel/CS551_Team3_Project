@@ -16,12 +16,12 @@ function onSignIn(googleUser) {
 var myApp = angular.module("HCDMSApp",[]);
 myApp.controller("HCDMSController", function($scope){
     $scope.config = {
-        apiKey: "AIzaSyDR-pOQU8in49ymSlBAOkElvuBizepLYnY",
-        authDomain: "healthcare-cdms.firebaseapp.com",
-        databaseURL: "https://healthcare-cdms.firebaseio.com",
-        projectId: "healthcare-cdms",
-        storageBucket: "healthcare-cdms.appspot.com",
-        messagingSenderId: "478995691799"
+        apiKey: "AIzaSyAQfF0iiIwg1nFOtDdePH2g5Yo97aHt_BY",
+        authDomain: "fir-2e680.firebaseapp.com",
+        databaseURL: "https://fir-2e680.firebaseio.com",
+        projectId: "fir-2e680",
+        storageBucket: "fir-2e680.appspot.com",
+        messagingSenderId: "336662025492"
     };
     firebase.initializeApp($scope.config);
     /** Registration Storage **/
