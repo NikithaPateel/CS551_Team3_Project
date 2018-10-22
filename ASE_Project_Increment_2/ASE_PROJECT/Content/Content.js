@@ -5,7 +5,7 @@ ContentApp.controller("contentController", function ($scope, $sce) {
     for (var i = 1; i <= count; i++) {
         $scope.html = $scope.html + "<div class='imageBlock' ng-click='work()'><img src='" + i + ".jpg' class='imgStyle'>" +
             "<div id='demo' class='infoStyle text-center'>" +
-            "Name: Sirisha<br>Disease:Something<br>Location:<span id='location'>Kansas City</span></div></div>";
+            "Name: Sirisha<br>Disease:Nothing<br>Location:<span id='location'>Kansas City</span></div></div>";
         $scope.myHTML = $sce.trustAsHtml($scope.html);
     }
     
