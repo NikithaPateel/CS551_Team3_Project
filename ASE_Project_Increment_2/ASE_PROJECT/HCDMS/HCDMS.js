@@ -31,7 +31,7 @@ myApp.controller("HCDMSController", function($scope){
         firebaseRef = firebase.database().ref();
         firebaseRef.push().set($scope.regData).then(function(){
             alert("Successfully!! Created an account");
-            location.replace("HomePage.html");
+            location.replace("/ASE_PROJECT/ProfileInfo/profile_info.html");
             console.log("Data created successfully");
         });
         if($scope.regPwd !== $scope.regRepeatPwd){
