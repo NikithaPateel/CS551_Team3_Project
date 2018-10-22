@@ -1,17 +1,29 @@
 var myApp = angular.module("homeApp",[]);
 myApp.controller("homeController", function($scope) {
     $scope.config = {
-        apiKey: "AIzaSyDR-pOQU8in49ymSlBAOkElvuBizepLYnY",
-        authDomain: "healthcare-cdms.firebaseapp.com",
-        databaseURL: "https://healthcare-cdms.firebaseio.com",
-        projectId: "healthcare-cdms",
-        storageBucket: "healthcare-cdms.appspot.com",
-        messagingSenderId: "478995691799"
+        apiKey: "AIzaSyAQfF0iiIwg1nFOtDdePH2g5Yo97aHt_BY",
+        authDomain: "fir-2e680.firebaseapp.com",
+        databaseURL: "https://fir-2e680.firebaseio.com",
+        projectId: "fir-2e680",
+        storageBucket: "fir-2e680.appspot.com",
+        messagingSenderId: "336662025492"
     };
     firebase.initializeApp($scope.config);
     $scope.uploadImage = function() {
+<<<<<<< HEAD
         $scope.metadata = {};
             var fileUploader = document.getElementById('fileUploader');
+=======
+        $scope.metadata = {
+            "Created By": $scope.createdBy,
+            "Contact no": $scope.createdPhno,
+            "Category": $scope.createdCategory,
+            "Disease": $scope.createdDisease,
+            "Diagnosis Cost": $scope.createdCost,
+            "Prescription": $scope.createdPrescriptions
+        };
+        var fileUploader = document.getElementById('fileImageUploaded');
+>>>>>>> e84dd9e2ef4c50ec2a0d85cd6031782346537c91
             var file = fileUploader.files[0];
             var extractimage = document.getElementById("fileImageUploaded");
             var imgfile = extractimage.files[0];
