@@ -41,6 +41,9 @@ button.btn.btn-default.glyphicon-search.glyphicon {
 #fileUploader{
     margin:0 auto;
 }
+.container-fluid{
+    padding-left: 0px !important;
+}
 .g-signin2 {
     background: white;
     color: #444;

@@ -11,5 +11,6 @@
     <orderEntry type="library" name="firebase" level="application" />
     <orderEntry type="library" name="JsBarcode.codabar" level="application" />
     <orderEntry type="library" name="JsBarcode.all" level="application" />
+    <orderEntry type="library" name="tesseract" level="application" />
   </component>
 </module>

@@ -1,15 +1,15 @@
 <html>
 <head>
-
 <!-- Bootstrap CDN Library -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
  <link rel="stylesheet" href="../HCDMS/HCDMS.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-
     <!-- FireBase Repository -->
 <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+    <!--Tessreact-->
+<script src="https://cdn.rawgit.com/naptha/tesseract.js/0.2.0/dist/tesseract.js"></script>
 <script src="HomePage.js"></script>
 </head>
 <body>
@@ -38,41 +38,13 @@
         </ul>
     </div>
 </nav>
-<div class="text-center registration uploadImage row">
-<div class="col-sm-4 fontstyle uploadLabel">Upload your Image:</div>
-<div class="col-sm-4"><input type="file" ng-model="fileUploaded" value="Upload" id="fileUploader"></div><br><br>
-<h3 style="font-weight: bold">Add metadata to the Image</h3><br>
-        <form>
-            <div class="form-group">
-                <label class="fontstyle col-sm-5">Created By:</label>
-                <input type="text" class="w3-round" placeholder="Enter name" ng-model="createdBy">
-            </div>
-            <div class="form-group">
-                <label class="fontstyle col-sm-5">Created Date:</label>
-                <input type="date" class="w3-round" ng-model="createdDate">
-            </div>
-            <div class="form-group">
-                <label class="fontstyle col-sm-5">Phone-number</label>
-                <input type="tel" class="w3-round" placeholder="Enter Phone number" ng-model="createdPhno">
-            </div>
-            <div class="form-group">
-                <label class="fontstyle col-sm-5">Organ Category</label>
-                <input class="w3-round" placeholder="Enter Category" ng-model="createdCategory"/>
-            </div>
-            <div class="form-group">
-                <label class="fontstyle col-sm-5">Disease Diagnosed:</label>
-                <input type="password"  class="w3-round" placeholder="Enter the disease" ng-model="createdDisease ">
-            </div>
-            <div class="form-group">
-                <label class="fontstyle col-sm-5">Cost of Diagnosis:</label>
-                <input type="password" class="w3-round" placeholder="Enter the cost in USD" ng-model="createdCost">
-            </div>
-            <div class="form-group">
-                <label class="fontstyle col-sm-5">Prescriptions:</label>
-                <input type="password" class="w3-round" placeholder="Enter Prescriptions" ng-model="createdPrescriptions">
-            </div><br>
-            <button class="btn btn-primary col-sm-*" ng-click="uploadImage()">Upload</button>
-        </form>
+    <div class="text-center registration uploadImage row">
+        <div class="col-sm-4 fontstyle uploadLabel">Extract the Text:</div>
+        <div class="col-sm-4"><input type="file"  ng-model="fileUploaded" value="Upload" id="fileImageUploaded"></div><br><br>
+        <div class="col-sm-4 fontstyle uploadLabel">Upload your Image:</div>
+        <div class="col-sm-4"><input type="file"  ng-model="fileImageUploaded" value="Upload" id="fileUploader"></div><br><br>
+        <button class="btn btn-primary text-center" ng-click = uploadImage()>Upload Info</button>
+<div id ="ocr_status"></div>
 </div>
 </div>
 </body>
