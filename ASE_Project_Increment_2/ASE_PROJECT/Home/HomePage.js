@@ -1,17 +1,17 @@
 var myApp = angular.module("homeApp",[]);
 myApp.controller("homeController", function($scope) {
     $scope.config = {
-        apiKey: "AIzaSyAQfF0iiIwg1nFOtDdePH2g5Yo97aHt_BY",
-        authDomain: "fir-2e680.firebaseapp.com",
-        databaseURL: "https://fir-2e680.firebaseio.com",
-        projectId: "fir-2e680",
-        storageBucket: "fir-2e680.appspot.com",
-        messagingSenderId: "336662025492"
+        apiKey: "AIzaSyDR-pOQU8in49ymSlBAOkElvuBizepLYnY",
+        authDomain: "healthcare-cdms.firebaseapp.com",
+        databaseURL: "https://healthcare-cdms.firebaseio.com",
+        projectId: "healthcare-cdms",
+        storageBucket: "healthcare-cdms.appspot.com",
+        messagingSenderId: "478995691799"
     };
     firebase.initializeApp($scope.config);
     $scope.uploadImage = function() {
         $scope.metadata = {};
-            var fileUploader = document.getElementById('fileUploader');
+        var fileUploader = document.getElementById('fileUploader');
         $scope.metadata = {
             "Created By": $scope.createdBy,
             "Contact no": $scope.createdPhno,
@@ -28,6 +28,8 @@ myApp.controller("homeController", function($scope) {
             storageRef.put(file, $scope.metadata).then(function(){
                 Tesseract.recognize(imgfile.name)
                     .then(function(result) {
+                        console.log("vachinda");
+                        extractedData=result.text;
                         firebase.storage().ref('HealthcareImageStorage/'+file.name).getDownloadURL().then(function(url) {
                             if (extractedData!== "") {
                                  var jsonData = {
@@ -39,7 +41,6 @@ myApp.controller("homeController", function($scope) {
                                 console.log("data inserted");
                             }
                         });
-                        extractedData=result.text;
                      }).progress(function(result) {
                     document.getElementById("ocr_status")
                         .innerText = result["status"] + " (" +

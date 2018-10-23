@@ -17,7 +17,7 @@ ContentApp.controller("contentController", function ($scope, $sce) {
         console.log(keys.length);
         for(var i =0;i<keys.length;i++) {
             $scope.html = $scope.html + "<div class='imageBlock'><img src='" + resData[keys[i]].imageURL + "' class='imgStyle'>" +
-                "<div id='demo' class='infoStyle text-center'><h4>Prescription Information:</h4>"+resData[keys[i]].medData+"</div></div>";
+                "<div id='demo' class='infoStyle text-center'><h3>Prescription Information:</h3>"+resData[keys[i]].medData+"</div></div>";
            document.getElementById('myHTML').innerHTML = $scope.html;
         }
     });
