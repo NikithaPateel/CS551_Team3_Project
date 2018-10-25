@@ -11,6 +11,21 @@
     <!--Tessreact-->
 <script src="https://cdn.rawgit.com/naptha/tesseract.js/0.2.0/dist/tesseract.js"></script>
 <script src="HomePage.js"></script>
+    <script type="text/javascript">
+        window.setTimeout('checkIfContinue()', 10*60*1000);  //10 minutes
+
+        function checkIfContinue()
+        {
+            if(confirm("Do you want to continue?"))
+            {
+                window.setTimeout('checkIfContinue()', 10*60*1000);  //start the timer again
+            }
+            else
+            {
+                window.location = 'timeout.html';
+            }
+        }
+    </script>
 </head>
 <body>
 <div ng-app="homeApp" ng-controller="homeController">

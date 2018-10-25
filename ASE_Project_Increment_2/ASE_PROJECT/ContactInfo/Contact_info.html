@@ -5,6 +5,21 @@
     <link rel="stylesheet" href="ContactInfo.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        window.setTimeout('checkIfContinue()', 10*60*1000);  //10 minutes
+
+        function checkIfContinue()
+        {
+            if(confirm("Do you want to continue?"))
+            {
+                window.setTimeout('checkIfContinue()', 10*60*1000);  //start the timer again
+            }
+            else
+            {
+                window.location = 'timeout.html';
+            }
+        }
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-inverse">

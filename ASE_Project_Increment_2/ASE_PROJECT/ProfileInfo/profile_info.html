@@ -10,6 +10,21 @@
     <!-- FireBase Repository -->
     <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
     <script src="profile_info.js"></script>
+    <script type="text/javascript">
+        window.setTimeout('checkIfContinue()', 10*60*1000);  //10 minutes
+
+        function checkIfContinue()
+        {
+            if(confirm("Do you want to continue?"))
+            {
+                window.setTimeout('checkIfContinue()', 10*60*1000);  //start the timer again
+            }
+            else
+            {
+                window.location = 'timeout.html';
+            }
+        }
+    </script>
 </head>
 <body ng-app="profileApp" ng-controller="profileController">
 <nav class="navbar navbar-inverse">
