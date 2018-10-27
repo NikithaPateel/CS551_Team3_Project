@@ -32,26 +32,30 @@
                         //alert(len.toString());
                         if(len == 0 ) {
                             $scope.html = "";
-                            for (var i = 0; i < keys.length; i++) {
+                            for(var i =0;i<keys.length;i++) {
+                                var data1= [resData[keys[i]].medData];
                                 $scope.html = $scope.html + "<div class='imageBlock'><img src='" + resData[keys[i]].imageURL + "' class='imgStyle'>" +
-                                    "<div id='demo' class='infoStyle text-center'><h3>Prescription Information:</h3>" + resData[keys[i]].medData + "</div></div>";
+                                    "<div id='demo' class='infoStyle text-center'><h3>Prescription Information:</h3><img src='https://barcode.tec-it.com/barcode.ashx?data=" + data1[i] +"&code=QRCode&dpi=96&dataseparator=' alt='Barcode Generator TEC-IT'/></div></div>";
+
                                 document.getElementById('myHTML').innerHTML = $scope.html;
                             }
+
                         }
                          else {
                              //alert("else part");
-                            $scope.html = "<div class='imageBlock'><img src='" + resData[keys[i]].imageURL + "' class='imgStyle'>" +
-                                "<div id='demo' class='infoStyle text-center'><h3>Prescription Information:</h3>" + resData[keys[i]].medData + "</div></div>";
-                            //alert("Hello");
-                            document.getElementById('myHTML').innerHTML = $scope.html;
+                            var data1= [resData[keys[i]].medData];
+                            $scope.html = $scope.html + "<div class='imageBlock'><img src='" + resData[keys[i]].imageURL + "' class='imgStyle'>" +
+                                "<div id='demo' class='infoStyle text-center'><h3>Prescription Information:</h3><img src='https://barcode.tec-it.com/barcode.ashx?data=" + data1[i] +"&code=QRCode&dpi=96&dataseparator=' alt='Barcode Generator TEC-IT'/></div></div>";
                     }
                     }
                 }
             };
 
-            for (var i = 0; i < keys.length; i++) {
+            for(var i =0;i<keys.length;i++) {
+                var data1= [resData[keys[i]].medData];
                 $scope.html = $scope.html + "<div class='imageBlock'><img src='" + resData[keys[i]].imageURL + "' class='imgStyle'>" +
-                    "<div id='demo' class='infoStyle text-center'><h3>Prescription Information:</h3>" + resData[keys[i]].medData + "</div></div>";
+                    "<div id='demo' class='infoStyle text-center'><h3>Prescription Information:</h3><img src='https://barcode.tec-it.com/barcode.ashx?data=" + data1[i] +"&code=QRCode&dpi=96&dataseparator=' alt='Barcode Generator TEC-IT'/></div></div>";
+
                 document.getElementById('myHTML').innerHTML = $scope.html;
             }
 
