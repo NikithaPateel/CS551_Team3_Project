@@ -21,19 +21,18 @@
                 html ="";
                 for (var i = 0; i < keys.length; i++) {
                     var input;
+                    var data1="";
                     input = document.getElementById('myinput');
                     filter = input.value.toUpperCase();
-                    //alert(filter);
                     var str = resData[keys[i]].medData;
                     var str1 = str.toUpperCase();
                     var n = str1.search(filter);
-                    var len = filter.length
+                    var len = filter.length;
                     if(n != -1){
-                        //alert(len.toString());
                         if(len == 0 ) {
                             $scope.html = "";
                             for(var i =0;i<keys.length;i++) {
-                                var data1= [resData[keys[i]].medData];
+                                 data1= [resData[keys[i]].medData];
                                 $scope.html = $scope.html + "<div class='imageBlock'><img src='" + resData[keys[i]].imageURL + "' class='imgStyle'>" +
                                     "<div id='demo' class='infoStyle text-center'><h3>Prescription Information:</h3><img src='https://barcode.tec-it.com/barcode.ashx?data=" + data1[i] +"&code=QRCode&dpi=96&dataseparator=' alt='Barcode Generator TEC-IT'/></div></div>";
 
@@ -42,11 +41,14 @@
 
                         }
                          else {
-                             //alert("else part");
-                            var data1= [resData[keys[i]].medData];
+                             data1= [resData[keys[i]].medData];
                             $scope.html = $scope.html + "<div class='imageBlock'><img src='" + resData[keys[i]].imageURL + "' class='imgStyle'>" +
                                 "<div id='demo' class='infoStyle text-center'><h3>Prescription Information:</h3><img src='https://barcode.tec-it.com/barcode.ashx?data=" + data1[i] +"&code=QRCode&dpi=96&dataseparator=' alt='Barcode Generator TEC-IT'/></div></div>";
                     }
+                    }
+                    else{
+                        $scope.html="";
+                        document.getElementById('myHTML').innerHTML = $scope.html;
                     }
                 }
             };
