@@ -15,7 +15,6 @@
 
     <script type="text/javascript">
         window.setTimeout('checkIfContinue()', 10*60*1000);  //10 minutes
-
         function checkIfContinue()
         {
             if(confirm("Do you want to continue?"))
@@ -43,7 +42,6 @@
         <form class="navbar-form navbar-left">
             <div class="search-bar">
                 <input type="text" name="search" value="" autocomplete="off" id="myinput" ng-keyup="searchFunction()" placeholder="Search">
-
             </div>
         </form>
         <ul class="nav navbar-nav navbar-right">
@@ -54,6 +52,12 @@
     </div>
 </nav>
 <div ng-bind-html="myHTML" id="myHTML">
+</div>
+<div ng-app="contentApp" ng-controller="hospitalController"  class="hospital" style="background: cadetblue" >
+    <h3>Near By Hospitals</h3>
+    <li ng-repeat="hospitals in hospitalsList" >
+        {{hospitals.name}}
+    </li>
 </div>
 </body>
 </html>
