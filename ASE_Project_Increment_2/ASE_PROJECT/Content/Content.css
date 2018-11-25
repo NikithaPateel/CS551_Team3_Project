@@ -1,6 +1,6 @@
 .imageBlock{
-    display:flex;
-    background: lavender;
+    display: inline-flex;
+    background: cadetblue;
     margin: 0 auto;
     margin-left:1rem;
     margin-right:1rem;
@@ -14,4 +14,10 @@
 .infoStyle{
     font-weight: bold;
     margin:0 auto;
+}
+h3{
+    color: aliceblue;
+}
+.navbar{
+    margin-top: -1.97rem !important;
 }

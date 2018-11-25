@@ -1,23 +1,25 @@
 body{
-    background-image: url("../Home/home_wallpaper.jpg");
+    background-image: url("../Home/bgImage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top:3rem;
 }
 .heading{
     color: white;
-    font-size: 3.5rem;
-    font-weight: bold;
-    background-color: black;
+    font-size: 3rem;
+    background-color: cadetblue;
 }
 .fontstyle{
-    color:black;
+    color:white;
     font-weight:bold;
     float:left;
 }
 .registration{
     top: 4rem;
     position: relative;
-    background-color: lavender;
-    width:30rem;
-    margin:0 auto;
+    background-color: darkcyan;
+    width:fit-content;
+    margin-left:2rem;
     padding:1rem;
     border-radius: 1rem;
 }
@@ -35,8 +37,12 @@ button.btn.btn-default.glyphicon-search.glyphicon {
     width:50rem;
 }
 .uploadLabel{
-    color: darkblue;
+    color: aliceblue;
 
+}
+.btn-primary {
+ background-color:cadetblue !important;
+    border-color: floralwhite !important;
 }
 #fileUploader{
     margin:0 auto;

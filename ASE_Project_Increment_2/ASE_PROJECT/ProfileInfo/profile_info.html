@@ -4,6 +4,7 @@
 
     <!-- Bootstrap CDN Library -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="profile_info.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
@@ -30,7 +31,7 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand">HealthCare Content Data Management System</a>
+            <a class="navbar-brand">HealthCare Management System</a>
         </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="../ProfileInfo/profile_info.html"><span class="glyphicon glyphicon-user"></span> Profile Info</a></li>
@@ -41,16 +42,17 @@
 
         </form>
         <ul class="nav navbar-nav navbar-right">
+            <li><a href="../myUploads/myuploads.html">My Uploads</a></li>
             <li><a href="../ContactInfo/Contact_info.html">Contact Us</a></li>
             <li><a href="../HCDMS/HCDMS.html"><span class="glyphicon glyphicon glyphicon-off"></span> Logout</a></li>
         </ul>
     </div>
 </nav>
-<div class="registration text-center">
+<div class="profileInfo text-center">
 <img src="profileImage.jpg" alt="John" style="width:100%">
-<h1 ng-bind="profName">{{$scope.profName}}</h1>
-<p class="title" ng-bind="profEmail" style="font-weight: bold">{{$scope.profEmail}}</p>
-<p ng-bind="profAddress" style="font-weight: bold">{{$scope.profAddress}}</p>
+<h1 ng-bind="profName" style="color:white">{{$scope.profName}}</h1>
+<p class="title" ng-bind="profEmail" style="font-weight: bold;color: white">{{$scope.profEmail}}</p>
+<p ng-bind="profAddress" style="font-weight: bold;color: white">{{$scope.profAddress}}</p>
 </div>
 </body>
 </html>

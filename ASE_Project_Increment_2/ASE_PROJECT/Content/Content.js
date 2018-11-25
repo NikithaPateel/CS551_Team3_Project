@@ -16,6 +16,17 @@
             let resData = snapshot.val();
             let keys = Object.keys(snapshot.val());
             $scope.html = "";
+            var imageURLS=[];
+            for (var a = 0; a < keys.length; a++) {
+               if(resData[keys[a]].email === JSON.parse(localStorage.profileInfo).email)
+               {
+                   imageURLS.push(resData[keys[a]].imageURL);
+               }
+            }
+            $scope.imageURLS = {
+                "url": imageURLS
+            };
+            localStorage.setItem("userUploads",JSON.stringify($scope.imageURLS));
             $scope.searchFunction = function(){
                 console.log(resData[keys[0]].medData);
                 html ="";
@@ -32,7 +43,7 @@
                         if(len == 0 ) {
                             $scope.html = "";
                             for(var i =0;i<keys.length;i++) {
-                                 data1= [resData[keys[i]].medData];
+                                data1= [resData[keys[i]].medData];
                                 $scope.html = $scope.html + "<div class='imageBlock'><img src='" + resData[keys[i]].imageURL + "' class='imgStyle'>" +
                                     "<div id='demo' class='infoStyle text-center'><h3>Prescription Information:</h3><img src='https://barcode.tec-it.com/barcode.ashx?data=" + data1[i] +"&code=QRCode&dpi=96&dataseparator=' alt='Barcode Generator TEC-IT'/></div></div>";
 

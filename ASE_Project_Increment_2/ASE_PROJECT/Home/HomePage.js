@@ -25,6 +25,7 @@ myApp.controller("homeController", function($scope) {
             var imgfile = extractimage.files[0];
             var storageRef = firebase.storage().ref('HealthcareImageStorage/'+file.name);
             var extractedData ="";
+            var email= JSON.parse(localStorage.profileInfo).email;
             storageRef.put(file, $scope.metadata).then(function(){
                 Tesseract.recognize(imgfile.name)
                     .then(function(result) {
@@ -33,6 +34,7 @@ myApp.controller("homeController", function($scope) {
                         firebase.storage().ref('HealthcareImageStorage/'+file.name).getDownloadURL().then(function(url) {
                             if (extractedData!== "") {
                                  var jsonData = {
+                                 email:email,
                                  imageURL: url,
                                  medData: extractedData
                                 };

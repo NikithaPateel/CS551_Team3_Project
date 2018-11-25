@@ -1,4 +1,6 @@
-
+.navbar-invers{
+    border-color:cadetblue !important;
+}
 .flip-card {
     background-color: transparent;
     width: 300px;
@@ -32,7 +34,7 @@
 
 .flip-card-back {
     background-color: #2980b9;
-    color: white;
+    color: cadetblue;
     transform: rotateY(180deg);
 }
 .flipcardfooter{
