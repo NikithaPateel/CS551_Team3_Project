@@ -28,5 +28,12 @@ h3{
     display: inline-block;
     color: aliceblue;
     padding:3rem;
+    width :350px;
+    height:200px;
+
+}
+.show_hosp{
+    margin-left: 70px;
+    background: cadetblue;
 
 }

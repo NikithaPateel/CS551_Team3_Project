@@ -54,8 +54,8 @@
 <div ng-bind-html="myHTML" id="myHTML">
 </div>
 <div ng-app="contentApp" ng-controller="hospitalController"  class="hospital" style="background: cadetblue" >
-    <h3>Near By Hospitals</h3>
-    <li ng-repeat="hospitals in hospitalsList" >
+    <button ng-click="click()" class="show_hosp" id="hospitals">Show Hospitals</button>
+    <li ng-repeat="hospitals in hospitalsList" ng-show="hosp">
         {{hospitals.name}}
     </li>
 </div>
