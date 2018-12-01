@@ -5,19 +5,31 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="ContactInfo.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-        window.setTimeout('checkIfContinue()', 10*60*1000);  //10 minutes
+        window.setTimeout('checkIfContinue()', 5*1000);  //10 minutes
 
         function checkIfContinue()
         {
+
             if(confirm("Do you want to continue?"))
             {
-                window.setTimeout('checkIfContinue()', 10*60*1000);  //start the timer again
+                window.setTimeout('checkIfContinue()', 5*1000);  //start the timer again
             }
             else
             {
                 window.location = 'timeout.html';
+                alert("hello");
+
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                    window.location="../HCDMS/HCDMS.html"
+                });
+
+
             }
         }
     </script>
