@@ -15,7 +15,6 @@
 
     <script type="text/javascript">
         window.setTimeout('checkIfContinue()', 10*60*1000);  //10 minutes
-
         function checkIfContinue()
         {
             if(confirm("Do you want to continue?"))
@@ -25,6 +24,11 @@
             else
             {
                 window.location = 'timeout.html';
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                    window.location="../HCDMS/HCDMS.html"
+                });
             }
         }
     </script>
@@ -43,7 +47,6 @@
         <form class="navbar-form navbar-left">
             <div class="search-bar">
                 <input type="text" name="search" value="" autocomplete="off" id="myinput" ng-keyup="searchFunction()" placeholder="Search">
-
             </div>
         </form>
         <ul class="nav navbar-nav navbar-right">
@@ -54,6 +57,12 @@
     </div>
 </nav>
 <div ng-bind-html="myHTML" id="myHTML">
+</div>
+<div ng-app="contentApp" ng-controller="hospitalController"  class="hospital" style="background: cadetblue" >
+    <button ng-click="click()" class="show_hosp" id="hospitals">Show Hospitals</button>
+    <li ng-repeat="hospitals in hospitalsList" ng-show="hosp">
+        {{hospitals.name}}
+    </li>
 </div>
 </body>
 </html>

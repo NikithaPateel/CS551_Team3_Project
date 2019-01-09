@@ -11,6 +11,11 @@
     <!-- FireBase Repository -->
     <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
     <script src="profile_info.js"></script>
+
+    <!-- Google API script we need inorder to sign in-->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
     <script type="text/javascript">
         window.setTimeout('checkIfContinue()', 10*60*1000);  //10 minutes
 
@@ -23,6 +28,11 @@
             else
             {
                 window.location = 'timeout.html';
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                    window.location="../HCDMS/HCDMS.html"
+                });
             }
         }
     </script>
